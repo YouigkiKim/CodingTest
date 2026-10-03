@@ -20,11 +20,14 @@ int main() {
     int large_count = 0;
     int ans = -1;
     for(auto& pair_ : map){
-        if(pair_.second > large_count) {
-            large_count = pair_.second;
-            if(ans == -1) ans = pair_.first;
+        if(ans == -1) ans = pair_.first;
+        if(pair_.second > large_count){
             ans = pair_.first;
-        };
+            large_count = pair_.second;
+        }else if(pair_.second == large_count && ans > pair_.first){
+            large_count = pair_.second;
+            ans = pair_.first;
+        }
     }
     std::cout << ans << " "<< large_count <<std::endl;
 
