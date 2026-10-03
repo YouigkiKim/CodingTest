@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# 코스 실행·채점 도구 진입점. 사용법: ./ct help
+exec python3 "$(dirname "$0")/tools/ct.py" "$@"

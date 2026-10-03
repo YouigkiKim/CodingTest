@@ -1,4 +1,7 @@
 {
     "ros.distro": "noetic",
-    "ROS2.distro": "noetic"
+    "ROS2.distro": "noetic",
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.compilerPath": "/usr/bin/g++",
+    "files.associations": { "ct": "shellscript" }
 }
