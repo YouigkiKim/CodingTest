@@ -1,0 +1,14 @@
+{
+  "name": "cpp-coding-test",
+  "build": { "dockerfile": "Dockerfile" },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-vscode.cpptools"]
+    }
+  },
+  // gdb 디버깅과 sanitizer 실행에 필요
+  "capAdd": ["SYS_PTRACE"],
+  "securityOpt": ["seccomp=unconfined"],
+  // tests/는 git에서 제외되어 있으므로 없으면 생성한다 (약 3~4분)
+  "postCreateCommand": "./ct doctor; [ -d tests ] || python3 tools/make_tests.py"
+}
